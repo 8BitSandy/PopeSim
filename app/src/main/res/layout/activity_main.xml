@@ -18,10 +18,9 @@
         android:id="@+id/button"
         android:clickable="true"
         android:onClick="makeMoney"
-        android:background="@mipmap/pray"
-        android:layout_below="@+id/moneyText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp" />
+        android:src="@mipmap/pray"
+        android:layout_below="@+id/splashText"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,5 +41,154 @@
         android:textIsSelectable="false"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/upgradesTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:layout_alignBottom="@+id/button"
+            android:layout_toStartOf="@+id/moneyText">
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+
+                android:id="@+id/upgBurnHeretic"
+                android:src="@mipmap/burnflame" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Burn the heretics and gain inheritance."
+                android:textSize="12sp"
+                android:id="@+id/upgBurnHereticName"
+                android:layout_marginLeft="4dp"
+                android:layout_below="@+id/upgBurnHereticCost"
+                android:layout_alignParentEnd="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P: +£0.01"
+                android:textSize="12sp"
+                android:id="@+id/upgBurnHereticPrayRate"
+                android:layout_below="@+id/upgBurnHereticReligion"
+                android:layout_toEndOf="@+id/upgBurnHeretic" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S: +£0"
+                android:textSize="12sp"
+                android:id="@+id/upgBurnHereticSalary"
+                android:layout_below="@+id/upgBurnHereticReligion"
+                android:layout_toEndOf="@+id/upgBurnHeretic"
+                android:layout_marginTop="15dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R: +1"
+                android:textSize="12sp"
+                android:id="@+id/upgBurnHereticReligion"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/upgBurnHeretic"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cost: £0.75"
+                android:textSize="12sp"
+                android:id="@+id/upgBurnHereticCost"
+
+                android:layout_below="@+id/upgBurnHereticSalary"
+                android:layout_alignStart="@+id/upgBurnHereticName" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:layout_alignBottom="@+id/button"
+            android:layout_toStartOf="@+id/moneyText">
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+
+                android:id="@+id/upgPreach"
+                android:src="@mipmap/preach" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spread lies for self-gain."
+                android:textSize="12sp"
+                android:id="@+id/upgPreachName"
+                android:layout_marginLeft="4dp"
+                android:layout_below="@+id/upgPreachCost"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P: +£0.00"
+                android:textSize="12sp"
+                android:id="@+id/upgPreachPrayRate"
+                android:layout_below="@+id/upgPreachReligion"
+                android:layout_toEndOf="@+id/upgPreach" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S: +£0.01"
+                android:textSize="12sp"
+                android:id="@+id/upgPreachSalary"
+                android:layout_below="@+id/upgPreachReligion"
+                android:layout_toEndOf="@+id/upgPreach"
+                android:layout_marginTop="15dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cost: £0.75"
+                android:textSize="12sp"
+                android:id="@+id/upgPreachCost"
+
+                android:layout_below="@+id/upgPreachSalary"
+                android:layout_alignStart="@+id/upgPreachName" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R: +2"
+                android:textSize="12sp"
+                android:id="@+id/upgPreachReligion"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/upgPreach"
+                android:layout_marginTop="10dp" />
+        </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Upgrades"
+        android:id="@+id/upgradesTextView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
