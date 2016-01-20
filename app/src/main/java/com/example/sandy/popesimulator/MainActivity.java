@@ -12,10 +12,9 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-
-    int Money = 0;
-    String Moneyword;
-    View tView;
+    private int money = 0;
+    private int incrementRate = 1;
+    TextView tView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     //@Override
     public void test(View v){
-        Money += 1;
-        tView.setText(Moneyword);
+        money += incrementRate;
+        tView.setText("£"+money);
     }
 }
