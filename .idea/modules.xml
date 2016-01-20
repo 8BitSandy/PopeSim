@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PopeSim.iml" filepath="$PROJECT_DIR$/PopeSim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PopeSimulator.iml" filepath="$PROJECT_DIR$/PopeSimulator.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
