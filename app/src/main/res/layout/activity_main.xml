@@ -129,7 +129,6 @@
                 android:layout_height="60dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"
-
                 android:id="@+id/upgPreach"
                 android:src="@mipmap/preach" />
 

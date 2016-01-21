@@ -5,17 +5,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 
 public class MainActivity extends AppCompatActivity {
     //Using big decimal because Java is incompetent of adding simple decimals
+    //Important numbers
     private BigDecimal money = new BigDecimal("0");
+
     private BigDecimal incrementRate = new BigDecimal("0.01");
+    private BigDecimal religion = new BigDecimal("0");
+    private BigDecimal taxes = new BigDecimal("0");
+
     private TextView moneyTView;
     private TextView splashTView;
+
+    private Upgrades upgrades;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         moneyTView = (TextView) findViewById(R.id.moneyText);
         splashTView = (TextView) findViewById(R.id.splashText);
+
+        upgrades = new Upgrades(this);
+        setupButtonListeners();
     }
 
     @Override
@@ -53,4 +65,40 @@ public class MainActivity extends AppCompatActivity {
         moneyTView.setText("£" + money);
         splashTView.setText(SplashTextMemer.getSplashText());
     }
+
+    public void increaseIncrementRate(BigDecimal integer){
+        incrementRate = incrementRate.add(integer);
+    }
+
+    public void increaseReligion(BigDecimal integer){
+        religion = religion.add(integer);
+    }
+
+    public void increaseTaxes(BigDecimal integer){
+        taxes = taxes.add(integer);
+    }
+
+
+    //This sucks but there is no other alternative
+    public void setupButtonListeners(){
+        ImageButton upgBurnHeretics = (ImageButton) findViewById(R.id.upgBurnHeretic);
+        ImageButton upgPreach = (ImageButton) findViewById(R.id.upgPreach);
+
+        upgBurnHeretics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                upgrades.burnHereticsUpgrade();
+            }
+        });
+
+        upgPreach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                upgrades.preachUpgrade();
+            }
+        });
+    }
+
+
+
 }
