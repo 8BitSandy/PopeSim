@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
     public void setupButtonListeners(){
         ImageButton upgBurnHeretics = (ImageButton) findViewById(R.id.upgBurnHeretic);
         ImageButton upgPreach = (ImageButton) findViewById(R.id.upgPreach);
+        ImageButton upgSocialMedia = (ImageButton) findViewById(R.id.upgSocialMedia);
 
         upgBurnHeretics.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +96,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 upgrades.preachUpgrade();
+            }
+        });
+
+        upgSocialMedia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                upgrades.socialMediaUpgrade();
             }
         });
     }

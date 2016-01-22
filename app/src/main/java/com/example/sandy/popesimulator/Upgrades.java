@@ -33,6 +33,14 @@ public class Upgrades {
         increaseRates(religionRaw, incrementRateRaw, taxesRaw);
     }
 
+    public void socialMediaUpgrade(){
+        String religionRaw= (String) ((TextView)act.findViewById(R.id.upgSocialMediaReligion)).getText();
+        String incrementRateRaw= (String) ((TextView)act.findViewById(R.id.upgSocialMediaPrayrate)).getText();
+        String taxesRaw= (String) ((TextView)act.findViewById(R.id.upgSocialMediaSalary)).getText();
+
+        increaseRates(religionRaw, incrementRateRaw, taxesRaw);
+    }
+
 
 
 
